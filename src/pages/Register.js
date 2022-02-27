@@ -4,8 +4,8 @@ import { Navigate} from "react-router-dom";
 
 function Register() {
     const [id , setId] =useState("");
-    const [email , setEmail] =useState("");
     const [password , setPassword] =useState("");
+    const [email , setEmail] =useState("");
     const [redirct,setRedirct] = useState(false);
     
     const submit = async (e) =>{
