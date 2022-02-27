@@ -13,7 +13,7 @@ function Home() {
         getboard();
     },[]);
     return(
-        <div> {loading ? <h1>loading...</h1> : done}</div>
+        <div> {loading ? <h1>loading...</h1> : <h1>done</h1>}</div>
     )
 }
 
