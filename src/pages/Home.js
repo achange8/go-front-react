@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import Board from "./Board";
 
 function Home() {
     const [loading,setloading] = useState(true);
@@ -8,6 +9,7 @@ function Home() {
         const json = await response.json();
         setloading(false);
         setboard(json);
+        console.log(json);
     };
     useEffect(()=> {
         getboard();
@@ -19,10 +21,11 @@ function Home() {
                  {board.map((board)=>(
                  <Board
                     key={board.NUM}
+                    NUM={board.NUM}
                     TITLE={board.TITLE}
                     WRITER={board.WRITER}
-                    HITCOUNT={board.HITCOUNT}
-                    CreactAt={Board.CreactAt}
+                    HITCOUNT={board.HiTCOUNT}
+                    CreactAt={board.CreatedAt}
                  />
                  ))}
             </div>
