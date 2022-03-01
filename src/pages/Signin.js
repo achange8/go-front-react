@@ -12,6 +12,7 @@ function Signin() {
         const json = await fetch('http://localhost:8081/api/signin',{
             method:'POST',
             headers:{'Content-type': 'application/json'},
+            credentials : 'include',
             body: JSON.stringify({
             id,password
         })
