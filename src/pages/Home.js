@@ -7,13 +7,28 @@ function Home() {
         const response = await fetch('http://localhost:8081/');
         const json = await response.json();
         setloading(false);
-        console.log(json);
+        setboard(json);
     };
     useEffect(()=> {
         getboard();
     },[]);
+
     return(
-        <div> {loading ? <h1>loading...</h1> : <h1>done</h1>}</div>
+        <div> {loading ? (<h1>loading...</h1>) : (
+             <div>
+                 {board.map((board)=>(
+                 <Board
+                    key={board.NUM}
+                    TITLE={board.TITLE}
+                    WRITER={board.WRITER}
+                    HITCOUNT={board.HITCOUNT}
+                    CreactAt={Board.CreactAt}
+                 />
+                 ))}
+            </div>
+
+            )}
+        </div>
     )
 }
 
