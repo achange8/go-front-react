@@ -1,5 +1,10 @@
 import {Link} from "react-router-dom"
-function Nav(){
+function Nav(user){
+  let menu;
+  if (user===""){
+    
+  }
+
     return (
 <nav className="navbar navbar-expand-md navbar-dark bg-dark mb-4">
     <div className="container-fluid">
