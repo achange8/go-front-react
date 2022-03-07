@@ -11,16 +11,17 @@ import Signin from './pages/Signin';
 function App() {
   const [user,setUser] = useState("");
   const getuser = async() =>{
-        const response = await fetch('http://localhost:8081/api/user',
+        const response = await fetch('http://localhost:8081/user/check',
         {headers:{'Content-type': 'application/json'},
         credentials : 'include',
       });
       const content = await response.json();
-      setUser(content)
+      if (response.status===200){
+      setUser(content)}
       };
 
   useEffect(()=>{getuser()},[]);
-
+      console.log(user)
 
   return (
     <div className="App">

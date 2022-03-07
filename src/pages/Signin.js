@@ -16,15 +16,12 @@ function Signin() {
             body: JSON.stringify({
             id,password
         })
-    });
-    if (json.status ===200){
+    });  
         setRedirct(true);
     }
     if (redirct){
         return <Navigate to="/" />;
     }
-    }
-
     return (
     <div>
      <form onSubmit={submit}>
