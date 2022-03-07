@@ -5,6 +5,7 @@ function Nav({user}){
       headers:{'Content-type': 'application/json'},
       credentials : 'include',
   });
+  window.location.href ='/';
 }
 
   let menu;
@@ -24,10 +25,10 @@ function Nav({user}){
 
         <ul className="navbar-nav me-auto mb-2 mb-md-0">
           <li className="nav-item">
-            <h3>{user}</h3>
+            <h4 className="nav-link active" aria-current="page">{user}</h4>
           </li>
           <li className="nav-item">
-           <Link to= "/" className="nav-link active" aria-current="page" onClick={logout}>log Out</Link>
+           <Link to= "/" className="nav-link active" aria-current="page" onClick={logout}>logOut</Link>
           </li>
         </ul>
 

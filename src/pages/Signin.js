@@ -20,7 +20,7 @@ function Signin() {
         setRedirct(true);
     }
     if (redirct){
-        return <Navigate to="/" />;
+        return window.location.href ='/'
     }
     return (
     <div>
