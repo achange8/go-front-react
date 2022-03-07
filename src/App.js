@@ -29,7 +29,7 @@ function App() {
       <Nav user={user}/>
     <main className="form-signin">
      <Routes>
-     <Route path="/" element={<Home/>} />
+     <Route path="/" element={<Home user={user}/>} />
      <Route path="/signin" element={<Signin/>} />
      <Route path="/register" element={<Register/>} />
      </Routes>

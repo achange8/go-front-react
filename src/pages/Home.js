@@ -1,7 +1,15 @@
 import { useEffect, useState } from "react";
+import { Navigate} from "react-router-dom";
 import Board from "./Board";
 
-function Home() {
+function Home({user}) {
+    let option ;
+    if(user!==""){
+        <button onClick={onClick}>Write</button>
+    }
+    function onClick(){
+        <Navigate to="/wirte" />
+    }
     const [loading,setloading] = useState(true);
     const [board,setboard] = useState([]); 
     const getboard= async() =>{
@@ -16,6 +24,8 @@ function Home() {
     },[]);
 
     return(
+
+        <div>
         <div> {loading ? (<h1>loading...</h1>) : (
              <div>
                  {board.map((board)=>(
@@ -32,6 +42,9 @@ function Home() {
 
             )}
         </div>
+        {option}
+        </div>
+        
     )
 }
 

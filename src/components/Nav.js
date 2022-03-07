@@ -1,5 +1,12 @@
 import {Link} from "react-router-dom" 
 function Nav({user}){
+  const logout = async()=> {
+      await fetch('http://localhost:8081/api/signout',{
+      headers:{'Content-type': 'application/json'},
+      credentials : 'include',
+  });
+}
+
   let menu;
   if (user===""){
     menu=(
@@ -20,7 +27,7 @@ function Nav({user}){
             <h3>{user}</h3>
           </li>
           <li className="nav-item">
-           <Link to= "/register" className="nav-link active" aria-current="page">log Out</Link>
+           <Link to= "/" className="nav-link active" aria-current="page" onClick={logout}>log Out</Link>
           </li>
         </ul>
 
