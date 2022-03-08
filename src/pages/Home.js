@@ -5,10 +5,12 @@ import Board from "./Board";
 function Home({user}) {
     let option ;
     if(user!==""){
+        option=(
         <button onClick={onClick}>Write</button>
+        );
     }
     function onClick(){
-        <Navigate to="/wirte" />
+        return window.location.href ='/write'
     }
     const [loading,setloading] = useState(true);
     const [board,setboard] = useState([]); 

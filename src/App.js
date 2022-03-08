@@ -7,6 +7,7 @@ import Home from './pages/Home';
 
 import Register from './pages/Register';
 import Signin from './pages/Signin';
+import WriteBoard from './pages/Write';
 
 function App() {
   const [user,setUser] = useState("");
@@ -21,7 +22,6 @@ function App() {
       };
 
   useEffect(()=>{getuser()},[]);
-      console.log(user)
 
   return (
     <div className="App">
@@ -32,6 +32,7 @@ function App() {
      <Route path="/" element={<Home user={user}/>} />
      <Route path="/signin" element={<Signin/>} />
      <Route path="/register" element={<Register/>} />
+     <Route path="/write" element={<WriteBoard/>} />
      </Routes>
     </main>
      </BrowserRouter>
