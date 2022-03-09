@@ -7,6 +7,7 @@ import Home from './pages/Home';
 
 import Register from './pages/Register';
 import Signin from './pages/Signin';
+import ReadBoard from './pages/ReadBoard';
 import WriteBoard from './pages/Write';
 
 function App() {
@@ -33,6 +34,8 @@ function App() {
      <Route path="/signin" element={<Signin/>} />
      <Route path="/register" element={<Register/>} />
      <Route path="/write" element={<WriteBoard/>} />
+     <Route path="/view/:id" element={<ReadBoard user={user}/>} />
+
      </Routes>
     </main>
      </BrowserRouter>

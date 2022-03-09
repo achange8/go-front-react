@@ -19,7 +19,6 @@ function Home({user}) {
         const json = await response.json();
         setloading(false);
         setboard(json);
-        console.log(json);
     };
     useEffect(()=> {
         getboard();
