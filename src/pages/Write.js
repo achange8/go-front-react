@@ -13,7 +13,14 @@ function WriteBoard() {
             body: JSON.stringify({
             TITLE, CONTENT
         })
-    });  
+    }); 
+    if(json.status===200){
+        window.location.href ='/'
+        
+    }else{
+
+    }
+    
     }
 
 
