@@ -13,13 +13,22 @@ function ReadBoard ({user}) {
     useEffect (()=>{
         getboard();
     },[]);
-
+    const deleteclick = async()=> {
+    const json =await fetch(`http://localhost:8081/modify/?id=${id}`,{
+        method:'DELETE',
+        headers:{'Content-type': 'application/json'},
+        credentials : 'include'})
+        if (json.status === 200 ){
+            return window.location.href ='/'
+        }
+        }
+     
     let option ;
     if(user===board.WRITER){
         option=(
             <div>
             <button>modify</button>
-            <button>delete</button>
+            <button onClick={deleteclick}>delete</button>
             </div>
         );
     }else{

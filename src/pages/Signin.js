@@ -9,7 +9,7 @@ function Signin() {
     
     const submit = async (e) =>{
         e.preventDefault();
-        const json = await fetch('http://localhost:8081/api/signin',{
+            await fetch('http://localhost:8081/api/signin',{
             method:'POST',
             headers:{'Content-type': 'application/json'},
             credentials : 'include',
