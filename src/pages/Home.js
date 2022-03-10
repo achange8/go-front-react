@@ -28,7 +28,7 @@ function Home({user}) {
 
         <div>
         <div> {loading ? (<h1>loading...</h1>) : (
-             <div>
+             <div className="border">
                  {board.map((board)=>(
                  <Board
                     key={board.NUM}

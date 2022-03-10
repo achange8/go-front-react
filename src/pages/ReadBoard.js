@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 
 function ReadBoard ({user}) {
+
     const [board,setboard] = useState([]);
     const {id} = useParams();
     const getboard = async()=> {
@@ -13,12 +14,32 @@ function ReadBoard ({user}) {
         getboard();
     },[]);
 
-    return (<div>
+    let option ;
+    if(user===board.WRITER){
+        option=(
+            <div>
+            <button>modify</button>
+            <button>delete</button>
+            </div>
+        );
+    }else{
+        <div></div>
+    }
 
-        {board.TITLE}
+    return (
+    <div>
+    <div className='border'>
+        <div>title : {board.TITLE}</div>
+        <div>writer : {board.WRITER}</div>
+        {board.CreatedAt}
 
-
-    </div>);
+        <p className='border'> content :
+            {board.CONTENT}
+        </p>
+    </div>
+    {option}
+    </div>
+    );
 }
 
 export default ReadBoard;
