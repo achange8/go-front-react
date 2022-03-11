@@ -9,6 +9,7 @@ import Register from './pages/Register';
 import Signin from './pages/Signin';
 import ReadBoard from './pages/ReadBoard';
 import WriteBoard from './pages/Write';
+import ModifyBoard from './pages/Modify';
 
 function App() {
   const [user,setUser] = useState("");
@@ -35,6 +36,7 @@ function App() {
      <Route path="/register" element={<Register/>} />
      <Route path="/write" element={<WriteBoard/>} />
      <Route path="/view/:id" element={<ReadBoard user={user}/>} />
+     <Route path="/modify/:id" element={<ModifyBoard user={user}/>} />
 
      </Routes>
     </main>

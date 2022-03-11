@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import { Navigate} from "react-router-dom";
 import Board from "./Board";
 
 function Home({user}) {

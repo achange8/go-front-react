@@ -6,28 +6,37 @@ function ReadBoard ({user}) {
     const [board,setboard] = useState([]);
     const {id} = useParams();
     const getboard = async()=> {
-    const response = await fetch(`http://localhost:8081/view/?id=${id}`)
-    const json = await response.json()
-    setboard(json);
+        const response = await fetch(`http://localhost:8081/view/?id=${id}`)
+        const json = await response.json()
+        setboard(json);
     }
+
     useEffect (()=>{
         getboard();
     },[]);
+
     const deleteclick = async()=> {
-    const json =await fetch(`http://localhost:8081/modify/?id=${id}`,{
+        const json =await fetch(`http://localhost:8081/modify/?id=${id}`,{
         method:'DELETE',
         headers:{'Content-type': 'application/json'},
         credentials : 'include'})
-        if (json.status === 200 ){
-            return window.location.href ='/'
+        if (json.status === 200 ){ 
+            alert('delete done!')
+            window.location.href ='/'
+         }else{
+            alert('failed')
+         }
         }
-        }
+
+    const modiClick = ()=>{
+        window.location.href =`/modify/${id}`
+    }
      
     let option ;
     if(user===board.WRITER){
         option=(
             <div>
-            <button>modify</button>
+            <button onClick={modiClick}>modify</button>
             <button onClick={deleteclick}>delete</button>
             </div>
         );

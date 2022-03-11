@@ -15,10 +15,11 @@ function WriteBoard() {
         })
     }); 
     if(json.status===200){
+        alert('done')
         window.location.href ='/'
         
     }else{
-
+    alert('failed')
     }
     
     }
