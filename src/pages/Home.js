@@ -6,8 +6,10 @@ function Home({user}) {
     if(user!==""){
         option=(
         <button onClick={onClick}>Write</button>
-        );
-    }
+        )}else{
+            option=(<h3>Only logged in users can write</h3>)
+        }
+    
     function onClick(){
         return window.location.href ='/write'
     }
