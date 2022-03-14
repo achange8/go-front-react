@@ -36,19 +36,6 @@ function Signin() {
         <button className="w-100 btn btn-lg btn-primary" type="submit">Sign in</button>
      </form>
      <Login />
-     <div id="g_id_onload"
-         data-client_id={"295221415874-mmh9djapdgnsl7i8neke5kec0984a9fm.apps.googleusercontent.com"}
-         data-login_uri="http://localhost:3000/signin"
-         data-auto_prompt="false">
-      </div>
-      <div className="g_id_signin"
-         data-type="standard"
-         data-size="large"
-         data-theme="outline"
-         data-text="sign_in_with"
-         data-shape="rectangular"
-         data-logo_alignment="left">
-      </div>
     </div>
     );
 }
