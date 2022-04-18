@@ -46,6 +46,7 @@ function Register() {
     <h1>Do not write your real email !!</h1>
     <h5>This page is for studying Go and React</h5>
     <h5>You can't expect professional security !</h5>
+    <h6>0CJT2136</h6>
 
     </div>
     );
